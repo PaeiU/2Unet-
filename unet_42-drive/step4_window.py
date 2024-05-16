@@ -24,6 +24,8 @@ from model.unet_model import UNet
 import numpy as np
 import time
 import threading
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 # 窗口主类
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
