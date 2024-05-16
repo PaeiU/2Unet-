@@ -13,7 +13,7 @@
 """
 
 from model.unet_model import UNet
-from utils.dataset import Dateset_Loader
+from util.dataset import Dateset_Loader
 from torch import optim
 import torch.nn as nn
 import torch
@@ -64,7 +64,7 @@ def train_net(net, device, data_path, epochs=40, batch_size=1, lr=0.00001):
                 # 如果当前的损失比最好的损失小，则保存当前论次的模型
                 if loss < best_loss:
                     best_loss = loss
-                    torch.save(net.state_dict(), 'best_model.pth')
+                    torch.save(net.state_dict(), 'best_model_jie.pth')
                 loss.backward()
                 optimizer.step()
                 pbar.update(1)

@@ -56,7 +56,7 @@ class MainWindow(QTabWidget):
         # 将网络拷贝到deivce中
         net.to(device=device)
         # 加载模型参数
-        net.load_state_dict(torch.load('best_model.pth', map_location=device))  # todo 模型位置
+        net.load_state_dict(torch.load('best_model_jie.pth', map_location=device))  # todo 模型位置
         # 测试模式
         net.eval()
         self.model = net

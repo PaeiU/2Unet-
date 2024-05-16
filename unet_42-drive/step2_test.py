@@ -16,7 +16,7 @@ import os
 import time
 
 from tqdm import tqdm
-from utils.utils_metrics import compute_mIoU_gray, show_results
+from util.utils_metrics import compute_mIoU_gray, show_results
 import glob
 import numpy as np
 import torch
@@ -27,7 +27,7 @@ from model.unet_model import UNet
 
 def cal_miou(test_dir="../DRIVE-SEG-DATA/Test_Images",
              pred_dir="../DRIVE-SEG-DATA/results", gt_dir="../DRIVE-SEG-DATA/Test_Labels",
-             model_path='best_model_drive.pth'):
+             model_path='best_model_jie.pth'):
     name_classes = ["background", "vein"]
     num_classes = len(name_classes)
     # 加载模型
@@ -85,4 +85,4 @@ if __name__ == '__main__':
     cal_miou(test_dir="../DRIVE-SEG-DATA/Test_Images",  # 测试集路径
              pred_dir="../DRIVE-SEG-DATA/results",  # 测试集推理结果保存路径
              gt_dir="../DRIVE-SEG-DATA/Test_Labels",  # 测试标签路径
-             model_path='best_model_drive.pth')  # 训练好的模型路径
+             model_path='best_model_jie.pth')  # 训练好的模型路径
